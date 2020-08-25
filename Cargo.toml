@@ -1,0 +1,15 @@
+[package]
+name = "dll-injection-test"
+version = "0.1.0"
+authors = ["Jan Krüger <jan.krueger.dev@outlook.com>"]
+edition = "2018"
+license-file = "UNLICENSE"
+publish = false
+
+[lib]
+crate-type = ["cdylib"]
+name = "dll_hook_test"
+
+[target.'cfg(windows)'.dependencies]
+winapi = { version = "0.3.9", features = ["std", "ntdef", "minwindef", "winbase", "basetsd", "processthreadsapi", "memoryapi", "winnt", "handleapi", "minwinbase", "libloaderapi", "synchapi", "winuser", "errhandlingapi"] }
+w32-error = "1.0.0"
